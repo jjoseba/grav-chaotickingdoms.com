@@ -1,0 +1,59 @@
+{% extends 'partials/base.html.twig' %}
+{% do assets.add('theme://js/lightbox.min.js') %}
+
+{% block content %}
+
+<div class="img-bar" style="background-image: url({{ page.url }}/header.jpg);"> 
+  	{% if page.header.display_title_jumbo %}<h2>{{ page.header.title }}</h2>{% endif %}
+  	{% if page.taxonomy.tag %}
+  	<div class="container">
+    <div class="categories">
+        {% for tag in page.taxonomy.tag %}
+        	{% if tag == "wp" %} <i class="fa fa-windows"></i> {% endif %}
+        	{% if tag == "game" %} <i class="fa fa-gamepad"></i> {% endif %}
+        	{% if tag == "web" %} <i class="fa fa-globe"></i> {% endif %}
+        	{% if tag == "android" %} <i class="fa fa-android"></i> {% endif %}
+        	{% if tag == "ios" %} <i class="fa fa-apple"></i> {% endif %}
+        {% endfor %}
+    </div>
+    </div>
+    {% endif %}
+  </div>
+
+<div class="container">
+<section class="app-info">
+      <div class="container">
+        <h2 class="hidden-md hidden-lg hidden-sm">{{ page.header.title }}</h2>
+        <div class="row">
+           <div class="side-info col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <img src="{{ page.url }}/icon.png" alt="{{ page.header.title }} icon" class="icon img-responsive">
+              <div>
+                <ul class="post-meta">
+                  {% if page.header.category %}<li><span class="post-meta-key">Categoría:</span> {{ page.header.category }}</li>{% endif %}
+                  {% if page.header.platforms %}<li><span class="post-meta-key">Plataformas:</span>{{ page.header.platforms }}</li>{% endif %}
+                  {% if page.header.published %}<li><span class="post-meta-key">Publicado:</span> {{ page.header.published }}</li>{% endif %}
+                </ul>
+              </div>
+           </div>
+           <div class="description col-xs-12 col-sm-9 col-md-9 col-lg-9">
+              <h2 class="hidden-xs">{{ page.header.title }}</h2>
+            {{ page.content }}
+           </div>
+        </div>
+       
+    </div>
+</section>
+
+<ul>
+    {% for image in page.media.images %}
+    <li>
+        <div class="image-surround">
+            {{ image.html }}
+        </div>
+    </li>
+    {% endfor %}
+    </ul>
+
+
+</div>
+{% endblock %}
