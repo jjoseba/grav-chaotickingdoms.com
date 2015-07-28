@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="img-bar" style="background-image: url({{ page.url }}/header.jpg);"> 
+<div class="img-bar" style="background-image: url({{ page.url }}/img/header.jpg);"> 
   	{% if page.header.display_title_jumbo %}<h2>{{ page.header.title }}</h2>{% endif %}
   	{% if page.taxonomy.tag %}
   	<div class="container">
@@ -26,7 +26,7 @@
         <h2 class="hidden-md hidden-lg hidden-sm">{{ page.header.title }}</h2>
         <div class="row">
            <div class="side-info col-xs-12 col-sm-3 col-md-3 col-lg-3">
-              <img src="{{ page.url }}/icon.png" alt="{{ page.header.title }} icon" class="icon img-responsive">
+              <img src="{{ page.url }}/img/icon.png" alt="{{ page.header.title }} icon" class="icon img-responsive">
               <div>
                 <ul class="post-meta">
                   {% if page.header.category %}<li><span class="post-meta-key">Categoría:</span> {{ page.header.category }}</li>{% endif %}
@@ -43,17 +43,22 @@
        
     </div>
 </section>
-
-<ul>
-    {% for image in page.media.images %}
-    <li>
-        <div class="image-surround">
-            {{ image.html }}
-        </div>
-    </li>
-    {% endfor %}
-    </ul>
-
-
 </div>
+
+<section class="gallery">
+
+    <div class="container">
+      <h2 class="text-center">Galería</h2><br>
+      <div class="row">
+      {% for image in page.media.images %}
+      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <a href="{{ image.url }}" data-lightbox="Screenshots" data-title="{{ page.header.title }}"><img class="img-thumbnail" src="{{ image.cropZoom(250,250).url }}" alt="{{ page.header.title }}"></a></div>
+      {% endfor %}
+
+   
+      </div>
+      </div>
+    </section>
+
+
 {% endblock %}
