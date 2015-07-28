@@ -2,10 +2,12 @@
 title: Mars Runaway
 menu: trabajos
 onpage_menu: false
-display_title_jumbo: false
 category: "Juego"
 platforms: "Windows Phone"
 published: "2011"
+finished: true
+bg_color: "#313d43"
+text_color: "#fff"
 
 taxonomy:
 	tag: [wp, game]
