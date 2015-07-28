@@ -1,0 +1,35 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<section id="works">
+	<div class="container">
+	    {{ page.content }}
+
+
+	<div class="controls">
+      <a class="filter active" data-filter="all"><span><i class="fa fa-check-circle"></i><br>todos</span></a>
+      <a class="filter" data-filter=".category-ios"><span><i class="fa fa-apple"></i><br>iOS</span></a>
+      <a class="filter" data-filter=".category-android"><span><i class="fa fa-android"></i><br>Android</span></a>
+      <a class="filter" data-filter=".category-wp"><span><i class="fa fa-windows"></i><br>Windows Phone</span></a>
+      <a class="filter" data-filter=".category-web"><span><i class="fa fa-globe"></i><br>Web</span></a>
+      <a class="filter" data-filter=".category-game"><span><i class="fa fa-gamepad"></i><br>Juegos</span></a>
+      
+    </div>
+    <br>
+	<div class="row" id="mix-container">	
+		{% for child in page.children %}
+        <div class="mix col-sm-6 col-md-4{% for tag in child.taxonomy.tag %} category-{{tag}}{% endfor %}" data-myorder="2" style="display: inline-block;">
+            <div class="app" style="background-color:{{ child.header.bg_color }}; {%if child.header.text_color %} color: {{child.header.text_color }};{% endif %}"><img class="img-responsive" src="{{ child.url }}/img/header.jpg"><span>{{child.header.title}}</span>{%if child.header.finished %} <a class="hover" href="{{child.url}}"></a> {% else %} <div class="hover soon"></div> {% endif %} </div>
+        </div>
+        {% endfor %}
+    </div>
+
+	</div>
+</section>
+
+{% endblock %}
+
+{% do assets.add('http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js') %}
+{% block bottom %}
+<script> $(function(){ $('#mix-container').mixItUp(); }); </script>
+{% endblock %}
