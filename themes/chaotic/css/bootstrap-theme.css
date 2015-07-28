@@ -962,12 +962,15 @@ blockquote{
 
 .img-bar{
   width: 100%;
-  height: 200px;
+  height: 17vw;
+  min-height: 200px;
   background-size: contain;
   background-position: 50% 32vw;
   background-attachment: fixed;
   margin-top: 48px;
   position: relative;
+  text-align: center;
+  
 }
 .img-bar .container{
   position: relative;
@@ -995,7 +998,9 @@ blockquote{
 @media (max-width: 768px){
   .img-bar{
     background-position: 50% 48px;
-    height: 30vw;
+    height: 31vw;
+    min-height: initial;
+    margin-bottom: -20px;
   }
 
   .img-bar .categories i{
