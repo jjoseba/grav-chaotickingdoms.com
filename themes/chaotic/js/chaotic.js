@@ -88,6 +88,7 @@
 })();
 
 //Cookie script
+var initialScroll = $(this).scrollTop();
 if (Cookies.get('chaotic_cooky')) {
     loadAnalytics();
 } else {
@@ -99,7 +100,7 @@ if (Cookies.get('chaotic_cooky')) {
 
 function cookieScroll() {
     var scroll = $(this).scrollTop();
-    if (scroll >= 200 && !(Cookies.get('chaotic_cooky'))) { 
+    if (Math.abs(initialScroll - scroll) >= 400 && !(Cookies.get('chaotic_cooky'))) { 
         setCookie(); 
         $(this).off('scroll', cookieScroll);
     }
@@ -124,6 +125,8 @@ function loadAnalytics() {
 
 }
 
+var formUrl = 'http://getsimpleform.com/messages/ajax?form_api_token=a690a97203e1625d5e37010e96103e21';
+$('[data-toggle="tooltip"]').tooltip();
 $(function() {
     $('a.page-scroll').bind('click', function(e) {
         var $anchor = $(this);
@@ -139,4 +142,21 @@ $(function() {
             $navigation.find("button.navbar-toggle").click();
         }
     });
+
+  $('form.contact_form').on('submit', function(e){
+  e.preventDefault();
+    var submitBtn = $(this).find('.submit-button');
+    var formData = $(this).serialize();    
+    submitBtn.addClass('sending');
+    $.ajax({
+      dataType: 'jsonp',
+      url: formUrl,
+      data: formData
+    }).done(function() {
+      setTimeout(function(){
+          submitBtn.removeClass('sending').addClass('success');
+        }, 600);
+    });
+  });
+
 });

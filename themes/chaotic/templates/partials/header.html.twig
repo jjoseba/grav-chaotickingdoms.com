@@ -1,20 +1,18 @@
-<nav class="navbar navbar-fixed-top" id="navigation" role="navigation">
+<nav class="navbar {%if not page.header.float_header and not float_header %}navbar-fixed-top{% endif %}" id="navigation" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><img src="{{ base_url  }}/user/pages/imgs/logo-mini.png"></a>
+      <a class="navbar-brand page-scroll" href="{%if not page.header.float_header %}{{ base_url }}/{% else %}#top{% endif %}"><img src="{{ base_url  }}/user/pages/imgs/logo-mini.png"></a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        {% for page in pages.children %}
-        {% if page.visible %}
-        {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-        <li class="{{ current_page }}"><a href="{{ page.url }}" class="page-scroll">{{ page.menu }}</a></li>
-        {% endif %}
-        {% endfor %}
+        <li><a href="{%if not page.header.float_header %}{{ base_url }}/{% endif %}#home" class="page-scroll">servicios</a></li>
+        <li><a href="{%if not page.header.float_header %}{{ base_url }}/{% endif %}#works" class="page-scroll">proyectos</a></li>
+        <li><a href="{%if not page.header.float_header %}{{ base_url }}/{% endif %}#campus" class="page-scroll">campus</a></li>
+        <li><a href="{%if not page.header.float_header %}{{ base_url }}/{% endif %}#contact" class="page-scroll">contacta</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

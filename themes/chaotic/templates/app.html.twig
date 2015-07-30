@@ -8,11 +8,11 @@
   	<div class="container">
     <div class="categories">
         {% for tag in page.taxonomy.tag %}
-        	{% if tag == "wp" %} <i class="fa fa-windows"></i> {% endif %}
-        	{% if tag == "game" %} <i class="fa fa-gamepad"></i> {% endif %}
-        	{% if tag == "web" %} <i class="fa fa-globe"></i> {% endif %}
-        	{% if tag == "android" %} <i class="fa fa-android"></i> {% endif %}
-        	{% if tag == "ios" %} <i class="fa fa-apple"></i> {% endif %}
+        	{% if tag == "wp" %} <i class="fa fa-windows" data-toggle="tooltip" data-placement="bottom" title="Windows Phone"></i> {% endif %}
+        	{% if tag == "game" %} <i class="fa fa-gamepad" data-toggle="tooltip" data-placement="bottom" title="Juego"></i> {% endif %}
+        	{% if tag == "web" %} <i class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Web"></i> {% endif %}
+        	{% if tag == "android" %} <i class="fa fa-android" data-toggle="tooltip" data-placement="bottom" title="Android"></i> {% endif %}
+        	{% if tag == "ios" %} <i class="fa fa-apple" data-toggle="tooltip" data-placement="bottom" title="iOS"></i> {% endif %}
         {% endfor %}
     </div>
     </div>
@@ -31,12 +31,26 @@
                   {% if page.header.category %}<li><span class="post-meta-key">Categoría:</span> {{ page.header.category }}</li>{% endif %}
                   {% if page.header.platforms %}<li><span class="post-meta-key">Plataformas:</span>{{ page.header.platforms }}</li>{% endif %}
                   {% if page.header.published %}<li><span class="post-meta-key">Publicado:</span> {{ page.header.published }}</li>{% endif %}
+                  {% if page.header.technology %}<li><span class="post-meta-key">Tecnología:</span> {{ page.header.technology }}</li>{% endif %}
+                  
                 </ul>
               </div>
            </div>
            <div class="description col-xs-12 col-sm-9 col-md-9 col-lg-9">
               <h2 class="hidden-xs">{{ page.header.title }}</h2>
             {{ page.content }}
+
+            {%if page.header.links%}
+            <br/>
+        	<div class="app-links">
+        		{%if page.header.links.appstore%}<a class="button apple" href="{{page.header.links.appstore}}" target="_blank"><i class="fa fa-apple"></i> App Store</a>{%endif%}
+        		{%if page.header.links.googleplay%}<a class="button android" href="{{page.header.links.googleplay}}" target="_blank"><i class="fa fa-android"></i> Google Play</a>{%endif%}
+        		{%if page.header.links.windowsphone%}<a class="button windows" href="{{page.header.links.windowsphone}}" target="_blank"><i class="fa fa-windows"></i> Windows Phone</a>{%endif%}
+        		{%if page.header.links.website%}<a class="button website" href="{{page.header.links.website}}" target="_blank" style="background-color:{{page.header.bg_color}};color:{{page.header.text_color}}"><i class="fa fa-home"></i> Sitio web</a>{%endif%}
+        		{%if page.header.links.facebook%}<a class="button facebook" href="{{page.header.links.facebook}}" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>{%endif%}
+        		{%if page.header.links.github%}<a class="button github" href="{{page.header.links.github}}" target="_blank"><i class="fa fa-github"></i> Github</a>{%endif%}
+        	</div>
+            {%endif%}
            </div>
         </div>
        

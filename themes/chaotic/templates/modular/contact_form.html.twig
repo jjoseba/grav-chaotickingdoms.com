@@ -1,0 +1,22 @@
+{% block content %}
+<section id="{{ page.header.section }}">
+  <div class="container">
+    {{ content }}
+
+    <form class="contact_form">
+      <input type="hidden" name="_form_id" id="_form_id" value="home_form">
+      <input id="nombre" name="nombre" type="text" value="" placeholder="nombre" required="">
+      <input type="hidden" id="ninja_forms_field_2_type" value="text">
+      <input id="email" name="email" type="email" value="" placeholder="email" required="">
+      <input type="hidden" id="ninja_forms_field_3_type" value="textarea">
+      <textarea name="mensaje" id="mensaje" placeholder="mensaje" rows="8" required=""></textarea>
+      <input type="hidden" id="enviar" value="submit">
+      <div class="submit-button">
+        <input type="submit" name="_ninja_forms_field_4" id="ninja_forms_field_4" value="enviar">
+        <div class="form-sending">enviando...</div>
+        <div class="sent">enviado <i class="fa fa-check"></i></div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

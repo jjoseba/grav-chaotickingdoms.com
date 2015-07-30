@@ -1,0 +1,26 @@
+{% extends 'partials/base.html.twig' %}
+
+ {% block preheader %}
+ <div class="parallax-container">
+      <div class="parallax-layer layer-1" data-parallax-speed="-0.5" data-max-scroll="800" style="transform: translate3d(0px, 9px, 0px);"></div>
+      <div class="parallax-layer layer-2" data-parallax-speed="-0.3" data-max-scroll="800" style="transform: translate3d(0px, 5.4px, 0px);"></div>
+      <div class="parallax-layer layer-5" data-parallax-speed="-0.1" data-max-scroll="800" style="transform: translate3d(0px, 1.8px, 0px);"></div>
+    </div>
+    <div id="top"></div>
+  <div class="main-header">
+      <img src="{{ base_url  }}/user/pages/imgs/chaotic-logo-bg.png" class="logo hidden-sm hidden-lg hidden-md">
+      <div class="container">
+      <img src="{{ base_url  }}/user/pages/imgs/chaotic-castle.png" class="castle hidden-xs">
+      <img src="{{ base_url  }}/user/pages/imgs/chaotic-logo.png" class="logo hidden-xs">
+      
+      </div>
+    </div>
+ {% endblock %}
+
+{% block content %}
+    {{ page.content }}
+    {% for module in page.collection() %}
+        <div id="{{ _self.pageLinkName(module.menu) }}"></div>
+        {{ module.content }}
+    {% endfor %}
+{% endblock %}

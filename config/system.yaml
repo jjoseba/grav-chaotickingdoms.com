@@ -3,13 +3,13 @@ home:
 
 pages:
   theme: chaotic
-  markdown_extra: false
+  markdown_extra: true
   process:
     markdown: true
     twig: false
 
 cache:
-  enabled: true
+  enabled: false
   check:
     method: file
   driver: auto

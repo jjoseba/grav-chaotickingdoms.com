@@ -1,0 +1,26 @@
+<section id="{{page.header.section}}">
+<div class="container">
+{{ content }}
+<br>
+<a id="view-all" class="showmore" href="./apps">
+  ver todos<br>
+  <i class="fa fa-chevron-right"></i>
+</a>
+{% for post in taxonomy.findTaxonomy({'tag':'featured'})|reverse %}
+
+    <article class="project {%if loop.index0 is even %}left{%else%}right{%endif%}" style="background-color:{{post.header.bg_color}};color:{{post.header.text_color}};">
+      <a href="{{post.url}}" class="image fit"><img src="{{post.url}}/img/header.jpg" alt=""></a>
+      <div class="content">
+        <header>
+          <h2 {%if post.header.primary_color %} style="color:{{post.header.primary_color}}"{% endif %}>{%if post.menu %}{{post.menu}}{% else %}{{post.title}}{% endif %}</h2>
+        </header>
+        {{post.summary}}
+        <a {%if post.header.primary_color %} style="color:{{post.header.primary_color}}"{% endif %} href="{{post.url}}" class="details"><i class="fa fa-search"></i> ver más</a>
+      </div>
+    </article>
+
+{% endfor %}
+
+
+</div>
+</section>

@@ -1,0 +1,21 @@
+<section id="{{page.header.section}}">
+<div class="container">
+    {{ content }}
+
+    <div class="row features {{ page.header.class}}">
+        {% for feature in page.header.features %}
+        <div class="col-sm-3">
+            <i class="fa fa-{{ feature.icon }}"></i>
+            {% if feature.header %}<h4>{{ feature.header }}</h4>{% endif %}
+            {% if feature.text %}<p>{{ feature.text }}</p>{% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <a class="showmore page-scroll" href="#works">
+          ver últimos trabajos<br>
+          <i class="fa fa-chevron-down"></i>
+        </a>
+    </div>
+</div>
+</section>

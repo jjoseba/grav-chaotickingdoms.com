@@ -1,0 +1,46 @@
+{% set float_header = true %}
+{% extends 'partials/base.html.twig' %}
+
+{% block preheader %}
+ <div class="parallax-container">
+      <div class="parallax-layer layer-1" data-parallax-speed="-0.5" data-max-scroll="800" style="transform: translate3d(0px, 9px, 0px);"></div>
+      <div class="parallax-layer layer-2" data-parallax-speed="-0.3" data-max-scroll="800" style="transform: translate3d(0px, 5.4px, 0px);"></div>
+      <div class="parallax-layer layer-5" data-parallax-speed="-0.1" data-max-scroll="800" style="transform: translate3d(0px, 1.8px, 0px);"></div>
+    </div>
+    <div id="top"></div>
+  <div class="main-header">
+      <img src="{{ base_url  }}/user/pages/imgs/chaotic-logo-bg.png" class="logo hidden-sm hidden-lg hidden-md">
+      <div class="container">
+      <img src="{{ base_url  }}/user/pages/imgs/chaotic-error.png" class="castle hidden-xs">
+      <img src="{{ base_url  }}/user/pages/imgs/chaotic-logo.png" class="logo hidden-xs">
+      
+      </div>
+    </div>
+ {% endblock %}
+
+{% block content %}
+<section id="home">
+	<div class="container" style="padding-bottom:8em;">
+		<div class="text-center" >
+		<br/><br/>
+			<h1>Error {{ page.header.http_response_code }}</h1>
+			<div class="lead">
+				{{ page.content }}
+			</div>
+			<br/>
+			<p><a class="button" href="{{base_url}}">IR A LA PÁGINA PRINCIPAL</a></p>
+		</div>
+		<br/><br/>
+			<h4> Let’s dissect 404. </h4>
+			<p>The first 4 indicates a client error. The server is saying that you’ve done something wrong, such as misspell the URL or request a page which is no longer there. Conversely, a 5xx error indicates a server-side problem. It also indicates an error which may be transient; if you try it again, it may work.</p>
+			<p>The middle 0 refers to a general syntax error. This could indicate a spelling mistake.</p>
+			<p>The last 4 just indicates the specific error in the group of 40x, which also includes 400: Bad Request, 401: Unauthorized, etc.</p>
+			<p>It’s been said that 404 was named after a room at CERN (if you read about Tim Berners-Lee&nbsp;<a href="http://404lab.com/404/history.asp#2">above</a>, you’ll know that that’s where the web began) where the original web servers were located. However, Tom S. tells us:</p>
+			<blockquote><p>“Having visited CERN myself, I can tell you that Room 404 is not on the fourth floor – the CERN office numbering system doesn’t work like that – the first digit usually refers to the *building* number (ie. building 4), and the second two to the office number. But, strangely, there is no room “04” in building “4”, the offices start at “410” and work upwards – don’t ask me why. Sorry to disappoint you all, but there is no Room 404 in CERN – it simply doesn’t exist, and certainly hasn’t been preserved as “the place where the web began”. In fact, there *is* a display about this, including a model of the first NeXT server, but the whole “Room 404″ thing is just a myth.”</p></blockquote>
+			<p>According to the W3C, 404 Not Found is only supposed to be used in cases where the server cannot find the requested location and is unsure of its status. If a page has permanently been deleted, it is supposed to use 410: Gone to indicate a permanent change. But has anyone ever seen 410? It must be 404…</p>
+
+			<strong>fuente:</strong> <a href="http://queenofsubtle.com/404/?page_id=1921#2" target="_blank">404 Research Lab - A brief history of 404 <i class="fa fa-external-link"></i></a>
+		</div>
+	</div>
+</section>
+{% endblock %}

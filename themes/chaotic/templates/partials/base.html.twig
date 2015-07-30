@@ -1,62 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% block head %}
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% if header.description %}
-        <meta name="description" content="{{ header.description }}">
-        {% else %}
-        <meta name="description" content="{{ site.description }}">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if header.description %}
+    <meta name="description" content="{{ header.description }}">
+    {% else %}
+    <meta name="description" content="{{ site.description }}">
+    {% endif %}
+    {% if header.robots %}
+    <meta name="robots" content="{{ header.robots }}">
+    {% endif %}
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#466985">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#597a95">
+
+    <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+
+    {% block stylesheets %}
+        {# Bootstrap core CSS #}
+        {% do assets.add('theme://css/bootstrap.min.css',101) %}
+    {# Custom styles for this theme #}
+        {% do assets.add('theme://css/bootstrap-theme.css',100) %}
+        {% do assets.add('http://fonts.googleapis.com/css?family=Noto+Sans:400,700') %}
+        {% do assets.add('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css') %}
+
+        {{ assets.css() }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {% do assets.add('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', 101) %}
+        {% do assets.add('theme://js/bootstrap.min.js') %}
+        {% do assets.add('theme://js/chaotic.js') %}
+        {%if page.header.float_header or float_header %}
+            {% do assets.add('theme://js/parallax.js') %}
+        {%endif%}
+
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+            {% do assets.add('https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js') %}
+            {% do assets.add('https://oss.maxcdn.com/respond/1.4.2/respond.min.js') %}
         {% endif %}
-        {% if header.robots %}
-        <meta name="robots" content="{{ header.robots }}">
-        {% endif %}
-        <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png">
+    {% endblock %}
 
-        <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+    {% endblock head %}
+</head>
 
-        {% block stylesheets %}
-            {# Bootstrap core CSS #}
-            {% do assets.add('theme://css/bootstrap.min.css',101) %}
+<body data-spy="scroll" data-target=".navbar">
+    <header>
+    {% block preheader %}{% endblock %}
+    {# include the header + navigation #}
+    {% include 'partials/header.html.twig' %}
+    </header>
+        {% block content %}{% endblock %}
 
-        {# Custom styles for this theme #}
-            {% do assets.add('theme://css/bootstrap-theme.css',100) %}
-            {% do assets.add('http://fonts.googleapis.com/css?family=Noto+Sans:400,700') %}
-            {% do assets.add('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css') %}
+    <div id="cookiesdirective" style="overflow: hidden;display:none;">
+        <div class="container">
+            <p>Esta web utiliza cookies propias y de terceros. Al utilizar este sitio web aceptas el uso de cookies en el mismo.</p>
+            <span class="btn btn-primary" id="consentCookyBtn">Aceptar</span> 
+            <a href="{{base_url}}/legal#cookies">Más información</a>
+        </div>
+    </div>
 
-            {{ assets.css() }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {% do assets.add('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', 101) %}
-            {% do assets.add('theme://js/bootstrap.min.js') %}
-            {% do assets.add('theme://js/chaotic.js') %}
-
-            {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
-                {% do assets.add('https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js') %}
-                {% do assets.add('https://oss.maxcdn.com/respond/1.4.2/respond.min.js') %}
-            {% endif %}
-
-            
-        {% endblock %}
-
-        {% endblock head %}
-    </head>
-
-      <body>
-        <header>
-        {% block preheader %}{% endblock %}
-        {# include the header + navigation #}
-        {% include 'partials/header.html.twig' %}
-        </header>
-            {% block content %}{% endblock %}
-        <footer>
-          <div class="container">
-          </div>
-        </footer>
-    </body>
+    <footer>
+      <div class="container">
+      <p class="center links">Chaotic Kindoms S.L., 2015 - CC-BY-2.0 | <a href="{{base_url}}/legal">Condiciones legales</a> | <a href="{{base_url}}/legal#cookies">Cookies</a> | <a href="https://github.com/jjoseba/grav-chaotickingdoms.com" target="_blank">código fuente</a></p>
+      {% block footer %}{% endblock %}
+      </div>
+    </footer>
+</body>
     {{ assets.js() }}
     {% block bottom %}{% endblock %}
+
+{%if page.header.float_header %}
+<script>
+var $navigation = $('#navigation');
+var navigationTop;
+var $window = $(window);
+var $home = $('section#home');
+
+function calculateNavTop(){ navigationTop = $home.position().top; }
+
+$window.bind('scroll', function () {
+    var scrollPos = $window.scrollTop();
+    calculateNavTop();
+    if (navigationTop){
+        $navigation.toggleClass('navbar-fixed-top', (navigationTop <= scrollPos));
+    }
+});
+
+var $viewAllWorks = $('#view-all');
+$('body').on('activate.bs.scrollspy', function (e) {
+  $viewAllWorks.toggleClass('active', ($navigation.find('li.active>a').attr('href') == '#works'));
+});
+</script>
+{%endif%}
 </html>
