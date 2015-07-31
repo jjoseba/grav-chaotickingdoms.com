@@ -981,7 +981,7 @@ blockquote{
 }
 .img-bar .container{
   position: relative;
-  height: 100%;
+  height: 17vw;
 }
 .img-bar .categories{
   position: absolute;
@@ -1011,6 +1011,11 @@ blockquote{
     min-height: initial;
     margin-bottom: -20px;
     background-attachment: local;
+  }
+
+  .img-bar .container{
+    height:28%;
+    height: 33vw;
   }
 
   .img-bar .categories i{
