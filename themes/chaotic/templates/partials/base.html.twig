@@ -47,7 +47,7 @@
     {% block javascripts %}
         {% do assets.add('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', 101) %}
         {% do assets.add('theme://js/bootstrap.min.js') %}
-        {% do assets.add('theme://js/chaotic.js') %}
+        {% do assets.add('theme://js/chaotic.min.js') %}
         {%if page.header.float_header or float_header %}
             {% do assets.add('theme://js/parallax.js') %}
         {%endif%}
