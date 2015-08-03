@@ -448,7 +448,9 @@ footer{
     padding-top: 4em;
   }
 }
-
+.courses{
+  clear: both;
+}
 .courses > div{
   padding: 1em;
 }
@@ -1089,6 +1091,33 @@ blockquote{
   max-width: 100%;
   display: block;
   margin:2em auto;
+}
+.responsive-img.quarter{
+  margin:10px auto;
+}
+.responsive-img.quarter:last-child{
+  margin-bottom:3em;
+}
+
+@media (min-width: 768px){
+  .responsive-img.quarter{
+    max-width: 29%;
+    display: inline-block;
+    margin: 10px 55px;
+    vertical-align: top;
+  }
+}
+@media (min-width: 992px){
+  .responsive-img.quarter{
+    width: 21%;
+    margin: 10px 15px;
+  }
+}
+@media (min-width: 1200px){
+  .responsive-img.quarter{
+    width: 20%;
+    margin: 10px 25px;
+  }
 }
 
 
