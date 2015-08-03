@@ -79,7 +79,7 @@
 }
 
 .features > div:hover i{
-  top:-3px;
+  -webkit-transform:translateY(-4px) scale(1.05);
   box-shadow: 0 4px 3px rgba(0,0,0,0.4);
   font-size: 98px;
   background-color: #30475c;
@@ -141,12 +141,12 @@ section#contact{
 }
 
 @keyframes pull-right {
-    from {left: -1px;}
-    to {left: 10px;}
+    from { transform: translateX(-1px);}
+    to {transform: translateX(10px);}
 }
 @-webkit-keyframes pull-right {
-    from {left: -1px;}
-    to {left: 10px;}
+    from { -webkit-transform: translateX(-1px);}
+    to {-webkit-transform: translateX(10px);}
 }
 
 .project{ background: #fff; margin: auto; margin-bottom: 1.5em; position: relative; box-shadow: 0 0 5px 0 rgba(0,0,0,0.3); max-width: 940px; }
@@ -234,7 +234,7 @@ section#contact{
   margin-top: 100px;
   z-index: 50;
   border-radius: 100px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   cursor: pointer;
   -webkit-transition: all 700ms;
   transition: all 700ms;

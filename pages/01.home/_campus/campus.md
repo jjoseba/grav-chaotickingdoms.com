@@ -18,12 +18,12 @@ Debido a los reveladores resultados que estamos consiguiendo en nuestra activida
 ___
 
 
-#### Colaboramos en diversos cursos y másteres sobre tecnologías de desarrollo de software
-Mantenemos una estrecha relación con distintas entidades dedicadas a la **formación**, entre las que destacan:
+#### <div class="text-center">Colaboramos en diversos cursos y másteres sobre tecnologías de desarrollo de software</div>
+<div class="text-center">Mantenemos una estrecha relación con distintas entidades dedicadas a la formación, entre las que destacan:</div>
 
 ![Universidad de Alcalá](logo-uah.png "Universidad de Alcalá") {.responsive-img .quarter .grayscale-hover}
 ![CICE](logo-cice.png "CICE") {.responsive-img .quarter .grayscale-hover}
 ![Anova IT](logo-anova.png "Anova IT") {.responsive-img .quarter .grayscale-hover}
 ![CIFF-UAH](logo-ciff.png "Centro Internacional de Formación Financiera") {.responsive-img .quarter .grayscale-hover}
 
-#### Algunos de los últimos cursos que hemos impartido
+#### <p class="text-center"> Algunos de los últimos cursos que hemos impartido</p>
