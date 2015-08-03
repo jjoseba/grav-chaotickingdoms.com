@@ -21,9 +21,9 @@ ___
 #### Colaboramos en diversos cursos y másteres sobre tecnologías de desarrollo de software
 Mantenemos una estrecha relación con distintas entidades dedicadas a la **formación**, entre las que destacan:
 
-![Universidad de Alcalá](logo-uah.png "Universidad de Alcalá") {.responsive-img .quarter}
-![CICE](logo-cice.png "CICE") {.responsive-img .quarter}
-![Anova IT](logo-anova.png "Anova IT") {.responsive-img .quarter}
-![CIFF-UAH](logo-ciff.png "Centro Internacional de Formación Financiera") {.responsive-img .quarter}
+![Universidad de Alcalá](logo-uah.png "Universidad de Alcalá") {.responsive-img .quarter .grayscale-hover}
+![CICE](logo-cice.png "CICE") {.responsive-img .quarter .grayscale-hover}
+![Anova IT](logo-anova.png "Anova IT") {.responsive-img .quarter .grayscale-hover}
+![CIFF-UAH](logo-ciff.png "Centro Internacional de Formación Financiera") {.responsive-img .quarter .grayscale-hover}
 
 #### Algunos de los últimos cursos que hemos impartido
