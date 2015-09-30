@@ -1216,3 +1216,14 @@ footer .links a:hover{
   color: #fff;
   text-decoration: none;
 }
+
+.float-left img{
+  padding: 5px;
+  float:left;
+  margin-right: 15px;
+}
+.float-left span{
+  display: block;
+  padding-top:10px;
+  clear:right;
+}
