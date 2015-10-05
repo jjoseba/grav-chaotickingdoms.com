@@ -1,11 +1,11 @@
 ---
-title: Proyectos
-menu: trabajos
+title: Portfolio
+menu: portfolio
 onpage_menu: true
 body_classes: "modular header-image fullwidth"
 
 ---
 
-#trabajos
-Aquí puedes consultar los proyectos que hemos realizado hasta ahora
+#portfolio
+Aquí puedes consultar algunos de los últimos proyectos que hemos realizado
 <br><br>

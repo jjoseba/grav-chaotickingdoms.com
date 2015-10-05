@@ -17,5 +17,5 @@ features:
       text: Desarrollo e impartición de cursos. Consultoría e implantación de "Gamificación"
 ---
 
-#trabajos
+#portfolio
 algunos de nuestros últimos proyectos
