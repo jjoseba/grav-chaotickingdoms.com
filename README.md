@@ -12,4 +12,8 @@ You should now have all the skeleton files under
 
 	/your/site/grav/user/
 
->> NOTE: This site is a modular component for Grav which requires [Grav](http://github.com/getgrav/grav), the [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) plugins.
+>> NOTE: This site is a modular component for Grav which requires the following plugins: 
+* [Grav](http://github.com/getgrav/grav), 
+* [Grav-Error plugin](https://github.com/getgrav/grav-plugin-error)
+* [Grav-Problems plugin](https://github.com/getgrav/grav-plugin-problems)
+* [Grav-ExternalLinks plugin](https://github.com/Sommerregen/grav-plugin-external-links)
