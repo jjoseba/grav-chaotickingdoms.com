@@ -12,8 +12,13 @@ You should now have all the skeleton files under
 
 	/your/site/grav/user/
 
->> NOTE: This site is a modular component for Grav which requires the following plugins: 
+> NOTE: This site is a modular component for Grav which requires the following plugins: 
 * [Grav](http://github.com/getgrav/grav), 
 * [Grav-Error plugin](https://github.com/getgrav/grav-plugin-error)
 * [Grav-Problems plugin](https://github.com/getgrav/grav-plugin-problems)
 * [Grav-ExternalLinks plugin](https://github.com/Sommerregen/grav-plugin-external-links)
+
+# Deployment
+
+The site is deployed automatically using [DeployBot](https://deploybot.com/)
+[![Deployment status from DeployBot](https://chaotic-kingdoms.deploybot.com/badge/34534836025686/49008.svg)](http://deploybot.com)
