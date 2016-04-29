@@ -23,16 +23,24 @@
   -webkit-transition-property: margin, -webkit-transform;
   -webkit-transition-duration: .2s;
   -webkit-transition-delay: .2s, 0;
+  transition-property: margin, transform;
+  transition-duration: .2s;
+  transition-delay: .2s, 0;
 }
 .navbar-toggle .icon-bar:after {
   margin-top: 10px;
   -webkit-transition-property: margin, -webkit-transform;
   -webkit-transition-duration: .2s;
   -webkit-transition-delay: .2s, 0;
+  transition-property: margin, transform;
+  transition-duration: .2s;
+  transition-delay: .2s, 0;
 }
 .navbar-toggle .icon-bar{
   -webkit-transition-duration: .2s;
   -webkit-transition-delay: .2s;
+  transition-duration: .2s;
+  transition-delay: .2s;
 }
 .navbar-toggle:not(.collapsed) .icon-bar {
   background-color: rgba(0,0,0,0.0);
@@ -41,11 +49,15 @@
   margin-top: 0;
   -webkit-transform: rotate(45deg);
   -webkit-transition-delay: 0, .2s;
+  transform: rotate(45deg);
+  transition-delay: 0, .2s;
 }
 .navbar-toggle:not(.collapsed) .icon-bar:after {
   margin-top: 0;
   -webkit-transform: rotate(-45deg);
   -webkit-transition-delay: 0, .2s;
+  transform: rotate(-45deg);
+  transition-delay: 0, .2s;
 }
 
 
@@ -80,6 +92,7 @@
 
 .features > div:hover i{
   -webkit-transform:translateY(-4px) scale(1.05);
+  transform:translateY(-4px) scale(1.05);
   box-shadow: 0 4px 3px rgba(0,0,0,0.4);
   font-size: 98px;
   background-color: #30475c;
