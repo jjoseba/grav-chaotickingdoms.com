@@ -2,15 +2,14 @@
 /**
  * External Links
  *
- * Helper class to add small icons to external and mailto links, informing
- * users the link will take them to a new site or open their email client.
+ * This file is part of Grav External Links plugin.
  *
- * Licensed under MIT, see LICENSE.
+ * Dual licensed under the MIT or GPL Version 3 licenses, see LICENSE.
+ * http://benjamin-regler.de/license/
  */
 
 namespace Grav\Plugin;
 
-use Grav\Common\Grav;
 use Grav\Common\Utils;
 use Grav\Common\GravTrait;
 
@@ -25,7 +24,7 @@ class ExternalLinks
   /**
    * @var ExternalLinks
    */
-	use GravTrait;
+  use GravTrait;
 
   /** -------------
    * Public methods
@@ -33,18 +32,19 @@ class ExternalLinks
    */
 
   /**
-   * Process contents i.e. apply external links filter to content.
+   * Process contents i.e. apply filer to the content.
    *
-   * @param  string $content The content to be processed
-   * @param  array  $options Array of options of how to filter links
+   * @param  string     $content The content to render.
+   * @param  array      $options Options to be passed to the renderer.
+   * @param  null|Page  $page    Null or an instance of \Grav\Common\Page.
    *
-   * @return string          The processed content
+   * @return string              The rendered contents.
    */
-	public function process($content, $options = [])
+  public function render($content, $options = [], $page = null)
   {
     // Get all <a> tags and process them
     $content = preg_replace_callback('~<a[^>]*>.*?</a>~i',
-      function($match) use ($options) {
+      function($match) use ($options, $page) {
         // Load PHP built-in DOMDocument class
         if (($dom = $this->loadDOMDocument($match[0])) === null) {
           return $match[0];
@@ -77,9 +77,10 @@ class ExternalLinks
         }
 
         // The link is external
-        elseif ($this->isExternalUrl($href, $domains)) {
+        elseif ($url = $this->isExternalUrl($href, $domains, $page)) {
           // Add external class
           $classes[] = 'external-link';
+          $a->setAttribute('href', $url);
 
           // Add target="_blank"
           $target = $options->get('target');
@@ -118,11 +119,15 @@ class ExternalLinks
             $classes[] = 'no-image';
           }
 
-          // Add title (aka alert text) e.g.
-          //    This link will take you to an external web site.
-          //    We are not responsible for their content.
-          // $title = $this->config->get('plugins.external_links.title');
-          // $a->setAttribute('data-title', $title);
+          // Add title (aka alert text)
+          if ($options->get('title')) {
+            $language = self::getGrav()['language'];
+            $message = $language->translate(['PLUGINS.EXTERNAL_LINKS.TITLE_MESSAGE']);
+
+            // Set default title to link else, set title as data attribute
+            $key = $a->hasAttribute('title') ? 'data-title' : 'title';
+            $a->setAttribute($key, $message);
+          }
         }
 
         // Set class attribute
@@ -147,22 +152,28 @@ class ExternalLinks
   /**
    * Test if a URL is external
    *
-   * @param  string  $url     The URL to test.
-   * @param  array   $domains An array of domains to be seen as internal.
+   * @param  string     $url      The URL to test.
+   * @param  array      $domains  An array of domains to be seen as internal.
+   * @param  null|Page  $page     Null or an instance of \Grav\Common\Page.
    *
-   * @return boolean          Returns true, if the URL is external,
-   *                          false otherwise.
+   * @return mixed                Returns the URL as a string, if it is external,
+   *                              false otherwise.
    */
-  protected function isExternalUrl($url, $domains = [])
+  protected function isExternalUrl($url, $domains = [], $page = null)
   {
     static $allowed_protocols;
     static $pattern;
 
+    /** @var Config $config */
+    $config = self::getGrav()['config'];
+
+    /** @var Page $page */
+    $page = $page ?: self::getGrav()['page'];
+
     // Statically store allowed protocols
     if (!isset($allowed_protocols)) {
-      $allowed_protocols = array_flip(array(
-        'ftp', 'http', 'https', 'irc', 'mailto', 'news', 'nntp',
-        'rtsp', 'sftp', 'ssh', 'tel', 'telnet', 'webcal')
+      $allowed_protocols = array_flip(
+        $config->get('plugins.external_links.links.schemes', ['http', 'https'])
       );
     }
 
@@ -171,7 +182,7 @@ class ExternalLinks
       $domains = array_merge($domains,
         array(self::getGrav()['base_url_absolute']));
 
-      foreach ( $domains as $domain ) {
+      foreach ($domains as $domain) {
         $domains[] = preg_quote($domain, '#');
       }
       $pattern = '#(' . str_replace(array('\*', '/*'), '.*?',
@@ -179,25 +190,35 @@ class ExternalLinks
     }
 
     $external = false;
-    if ( !preg_match($pattern, $url) ) {
+    // Check for URLs that don't match any excluded domain
+    if (!preg_match($pattern, $url)) {
       // Check if URL is external by extracting colon position
       $colonpos = strpos($url, ':');
       if ($colonpos > 0) {
         // We found a colon, possibly a protocol. Verify.
         $protocol = strtolower(substr($url, 0, $colonpos));
-        if ( isset($allowed_protocols[$protocol]) ) {
+        if (isset($allowed_protocols[$protocol])) {
           // The protocol turns out be an allowed protocol
-          $external = true;
+          $external = $url;
         }
-      } elseif (Utils::startsWith($url, 'www.')) {
-        // We found an url without protocol, but with starting
-        // 'www' (sub-)domain
-        $external = true;
+      } elseif ($config->get('plugins.external_links.links.www')) {
+        // Remove possible path duplicate
+        $route = self::getGrav()['base_url'] . $page->route();
+        $href = Utils::startsWith($url, $route)
+          ? ltrim(mb_substr($url, mb_strlen($route)), '/')
+          : $url;
+
+        // We found an url without protocol, but with starting 'www' (sub-)domain
+        if (Utils::startsWith($url, 'www.')) {
+          $external = 'http://' . $url;
+        } elseif (Utils::startsWith($href, 'www.')) {
+          $external = 'http://' . $href;
+        }
       }
     }
 
-    // Only if a colon and a valid protocol was found return true
-    return ($colonpos !== false) && $external;
+    // Only if a valid protocol or an URL starting with 'www.' was found return true
+    return $external;
   }
 
   /**
@@ -402,8 +423,14 @@ class ExternalLinks
 
     // Encode contents as UTF-8, strip whitespaces & normalize newlines
     $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8');
-    $content = preg_replace(array('~\R~u', '~>[[:space:]]++<~m'),
-      array("\n", '><'), $content);
+
+    // $whitespaces = array(
+    //   '~\R~u' => "\n",         // Normalize new line
+    //   '~\>[^\S ]+~s' => '>',   // Strip whitespaces after tags, except space
+    //   '~[^\S ]+\<~s' => '<',   // Strip whitespaces before tags, except space
+    //   '~(\s)+~s' => '\\1'      // Shorten multiple whitespace sequences
+    // );
+    // $content = preg_replace(array_keys($whitespaces), $whitespaces, $content);
 
     // Parse the HTML using UTF-8
     // The @ before the method call suppresses any warnings that

@@ -1,3 +1,51 @@
+# v1.4.2
+## 12/06/2015
+
+1. [](#new)
+  * Added French translations [#8](https://github.com/Sommerregen/grav-plugin-external-links/pull/8/files) (Thanks to @MATsxm)
+
+# v1.4.1
+## 11/18/2015
+
+2. [](#improved)
+  * Page specific options now respect the default configurations set in the admin panel
+
+# v1.4.0
+## 11/17/2015
+
+1. [](#new)
+  * Added `External Links` options to page options tab
+2. [](#improved)
+  * Improved `isExternalUrl` function to allow custom schemes and whether to evaluate links beginning with `.www` or not
+  * Added more blueprint options
+  * Improved code
+  * Updated docs
+3. [](#bugfix)
+  * Fixed [#7](https://github.com/Sommerregen/grav-plugin-external-links/issues/7) (Possible issue with malformed URLs)
+  * Fixes `external_links` filter function
+
+# v1.3.1
+## 09/09/2015
+
+2. [](#improved)
+  * Added blueprints for Grav Admin plugin
+3. [](#bugfix)
+  * Fixed [#5](https://github.com/Sommerregen/grav-plugin-external-links/issues/5) (Works on first page displayed)
+  * Fixed [#6](https://github.com/Sommerregen/grav-plugin-external-links/issues/6) (Validation failed: title is not defined in blueprints)
+
+# v1.3.0
+## 08/08/2015
+
+1. [](#new)
+  * Added admin configurations **(requires Grav 0.9.34+)**
+  * Added multi-language support **(requires Grav 0.9.33+)**
+  * Added default title message for external links
+2. [](#improved)
+  * Switched to `onBuildPagesInitialized` event **(requires Grav 0.9.29+)**
+  * Updated `README.md`
+3. [](#bugfix)
+  * Fixed [#4](https://github.com/Sommerregen/grav-plugin-external-links/issues/4) (Problem with non UTF-8 characters)
+
 # v1.2.2
 ## 05/10/2015
 
@@ -19,9 +67,6 @@
   * Allow multiple classes to exclude in option `exclude.classes`
   * Improved process engine to ensure not to alter HTML tags or HTML entities in content
   * Refactored code
-3. [](#bugfix)
-  * Fixed self-closing tags in HTML5 and ensured to return contents compliant to HTML(5)
-  * Fixed LightSlider issue
 
 # v1.1.3
 ## 02/10/2015
@@ -37,7 +82,7 @@
 2. [](#improved)
   * Improved usage example in README.md
 3. [](#bugfix)
-  * Fixed issue with LightSlider plugin
+  * Fixed [#1](https://github.com/Sommerregen/grav-plugin-external-links/issues/4) (Issue with LightSlider plugin)
 
 # v1.1.1
 ## 02/06/2015
@@ -62,7 +107,7 @@
   * Improved and corrected calculations of image size
 3. [](#bugfix)
   * Fixed some typo in the documentation
-  * Fixed and removed additional <body> tag from page content
+  * Fixed and removed additional `<body>` tag from page content
 
 # v1.0.1
 ## 01/29/2015
