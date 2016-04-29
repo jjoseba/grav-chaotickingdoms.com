@@ -7,9 +7,9 @@
   <i class="fa fa-chevron-right"></i>
 </a>
 {% for post in taxonomy.findTaxonomy({'tag':'featured'})|reverse %}
-
+    {% set imgpath = page.find(post.route ~ '/img') %}
     <article class="project {%if loop.index0 is even %}left{%else%}right{%endif%}" style="background-color:{{post.header.bg_color}};color:{{post.header.text_color}};">
-      <a href="{{post.url}}" class="image fit"><img src="{{ base_url  }}/user/pages/imgs/{{post.slug}}.jpg" alt=""></a>
+      <a href="{{post.url}}" class="image fit"><img src="{{ imgpath.media['header.jpg'].url }}" alt=""></a>
       <div class="content">
         <header>
           <h2 {%if post.header.primary_color %} style="color:{{post.header.primary_color}}"{% endif %}>{%if post.menu %}{{post.menu}}{% else %}{{post.title}}{% endif %}</h2>
@@ -18,7 +18,6 @@
         <a {%if post.header.primary_color %} style="color:{{post.header.primary_color}}"{% endif %} href="{{post.url}}" class="details"><i class="fa fa-search"></i> ver más</a>
       </div>
     </article>
-
 {% endfor %}
 
 
