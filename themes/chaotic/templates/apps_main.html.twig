@@ -18,7 +18,7 @@
 	<div class="row" id="mix-container">	
 		{% for child in page.children.order('default', 'desc') %}
         <div class="mix col-sm-6 col-md-4{% for tag in child.taxonomy.tag %} category-{{tag}}{% endfor %}" data-myorder="2" style="display: inline-block;">
-            <div class="app" style="background-color:{{ child.header.bg_color }}; {%if child.header.text_color %} color: {{child.header.text_color }};{% endif %}"><img class="img-responsive" src="{{ child.url }}/img/header.jpg"><span>{{child.header.title}}</span>{%if child.header.finished %} <a class="hover" href="{{child.url}}"></a> {% else %} <div class="hover soon"></div> {% endif %} </div>
+            <div class="app" style="background-color:{{ child.header.bg_color }}; {%if child.header.text_color %} color: {{child.header.text_color }};{% endif %}"><img class="img-responsive" src="{{ base_url  }}/user/pages/imgs/{{child.slug}}.jpg"><span>{{child.header.title}}</span>{%if child.header.finished %} <a class="hover" href="{{child.url}}"></a> {% else %} <div class="hover soon"></div> {% endif %} </div>
         </div>
         {% endfor %}
     </div>
