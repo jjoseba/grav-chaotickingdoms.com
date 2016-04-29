@@ -1,0 +1,11 @@
+email: jsznavarrete@chaotic-kingdoms.com
+fullname: 'Chaotic Kingdoms'
+title: Admin
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$Igxo87MOLQOJnXzwfhBHMunu7ASX4zX.h.2vlx34RmmfxLnh/OAga
