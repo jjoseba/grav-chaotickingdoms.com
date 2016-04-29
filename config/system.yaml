@@ -17,7 +17,7 @@ cache:
 
 twig:
   cache: true
-  debug: true
+  debug: false
   auto_reload: true
   autoescape: false
 
@@ -30,6 +30,10 @@ assets:
 
 debugger:
   enabled: false
-  twig: true
+  twig: false
   shutdown:
     close_connection: true
+
+images:
+  default_image_quality: 85
+  cache_all: true 

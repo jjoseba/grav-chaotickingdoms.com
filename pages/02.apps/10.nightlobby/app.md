@@ -47,4 +47,4 @@ Desarrollado de aplicación nativa con Parse.com como backend, creando además u
 * Integración con Google Maps
 * Desarrollo en Wordpress de un tema para landing page responsive y blog del proyecto ([nightlobby.es](http://www.nightlobby.es/))
 
-![Premio en el 7º Concurso de ideas para la creación de empresa de base tecnológica (UAH - 2014) ](img/premio-uah.png "") {.responsive-img}
+![Premio en el 7º Concurso de ideas para la creación de empresa de base tecnológica (UAH - 2014) ](img/premio-uah.png?classes=responsive-img "")

@@ -40,7 +40,7 @@ Además del desarrollo del juego, se compró el dominio [castawars.com](http://c
 
 ### Respuestas y acogida
 
-![Acogida de Casta Wars en los medios](img/castawars-papers.jpg "Acogida de Casta Wars en los medios") {.responsive-img}
+![Acogida de Casta Wars en los medios](img/castawars-papers.jpg?classes=responsive-img "Acogida de Casta Wars en los medios")
 
 Tras su publicación el juego tuvo bastante repercusión en España:
 * Aparición en las versiones digitales de los principales medios de comunicación (Público, El Mundo, El Periódico, Meristation, ABC, eldiario.es...) 
