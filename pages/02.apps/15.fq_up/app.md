@@ -1,5 +1,5 @@
 ---
-menu: FQ-Up: Fed. Esp. de Fibrosis Quística
+menu: FQ-Up
 title: FQ-Up: Federación Española de Fibrosis Quística
 onpage_menu: false
 category: "App, Consulta"
@@ -12,13 +12,16 @@ primary_color: "#fff"
 text_color: "#fff"
 links:
 	googleplay: "https://play.google.com/store/apps/details?id=com.pyramidxapps.streetjuggler"
+	facebook: "https://www.facebook.com/groups/863378197124758/"
+	website: "http://fibrosisquistica.org/"
+
 
 taxonomy:
 	tag: [android, ios, web, featured]
 
 ---
 
-App destinada a los pacientes con
+App para móvil y tablet para la *Federación Española de Fibrosis Quística* con el objetivo de mejorar el grado de adherencia al tratamiento en personas con esta enfermedad.
 
 ===
 
