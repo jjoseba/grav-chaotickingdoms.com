@@ -4,7 +4,7 @@ title: Night Lobby
 onpage_menu: false
 category: "Social, Estilo de vida"
 platforms: "Android, iOS"
-published: "Seotiembre 2014"
+published: "Septiembre 2014"
 finished: true
 bg_color: "#353535"
 text_color: "#fff"
@@ -40,7 +40,7 @@ Night Lobby te ofrece:
 
 Y lo mejor de todo… ¡totalmente gratis, ahora y siempre!
 
-Desarrollado de aplicación nativa con Parse.com como backend, creando además un panel privado de administración para poder actualizar la información de ciudades, discotecas, listas y flyers. El desarrolló incluyó:
+Desarrollo de aplicación nativa con Parse.com como backend, creando además un panel privado de administración para poder actualizar la información de ciudades, discotecas, listas y flyers. El desarrolló incluyó:
 * Diseño de UX
 * Servicio de actualización y consulta de datos en la nube mediante Parse
 * Caché local de datos e imágenes
