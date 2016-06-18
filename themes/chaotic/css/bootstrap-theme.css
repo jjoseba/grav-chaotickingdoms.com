@@ -872,6 +872,11 @@ body:after {
 #mix-container .app > span{
   padding: 10px;
   display: block;
+  height:40px;
+  width: 100%;
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 #mix-container .app .hover{
   position: absolute;
@@ -996,6 +1001,7 @@ blockquote{
 .img-bar .container{
   position: relative;
   height: 17vw;
+  min-height: 200px;
 }
 .img-bar .categories{
   position: absolute;
@@ -1030,6 +1036,7 @@ blockquote{
   .img-bar .container{
     height:28%;
     height: 33vw;
+    min-height: initial;
   }
 
   .img-bar .categories i{
@@ -1041,6 +1048,12 @@ blockquote{
     font-size: 20px;
     line-height: 40px;
     color: #fff;
+  }
+
+  #mix-container .app > span{
+    height: auto;
+    white-space: initial;
+    overflow: auto;
   }
 
 }
@@ -1103,6 +1116,9 @@ blockquote{
   max-width: 100%;
   display: block;
   margin:2em auto;
+}
+.responsive-img.no-margin{
+  margin: 5px auto;
 }
 .responsive-img.quarter{
   margin:10px auto;
