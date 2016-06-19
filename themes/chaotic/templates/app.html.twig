@@ -32,7 +32,13 @@
                   {% if page.header.platforms %}<li><span class="post-meta-key">Plataformas:</span>{{ page.header.platforms }}</li>{% endif %}
                   {% if page.header.published %}<li><span class="post-meta-key">Publicado:</span> {{ page.header.published }}</li>{% endif %}
                   {% if page.header.technology %}<li><span class="post-meta-key">Tecnología:</span> {{ page.header.technology }}</li>{% endif %}
-                  
+                  {% if page.header.colabo %}
+                    <li><span class="post-meta-key">Colaboración con:</span> 
+                    {{ page.header.colabo }}
+                      
+                        <img src="{{ imgpath.media['colabo.png'].url }}" class="responsive-img no-margin" alt="{{page.header.colabo}}" />
+                      
+                  {% endif %}
                 </ul>
               </div>
            </div>
