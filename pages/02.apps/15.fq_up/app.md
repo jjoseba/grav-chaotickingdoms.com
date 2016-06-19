@@ -5,14 +5,16 @@ onpage_menu: false
 category: "App, Consulta"
 platforms: "Android, iPhone"
 technology: "Xamarin, ASP.NET"
-published: "Mayo 2016"
+published: "Junio 2016"
 finished: true
+colabo: "Inyección Comunicación"
 bg_color: "#149b7c"
 primary_color: "#fff"
 text_color: "#fff"
 links:
-	googleplay: "https://play.google.com/store/apps/details?id=com.pyramidxapps.streetjuggler"
+	googleplay: "https://play.google.com/store/apps/details?id=com.inyeccion.fqup&hl=es"
 	facebook: "https://www.facebook.com/groups/863378197124758/"
+	appstore: "https://itunes.apple.com/es/app/fq-up-federacion-espanola/id1110876701?mt=8"
 	website: "http://fibrosisquistica.org/"
 
 
