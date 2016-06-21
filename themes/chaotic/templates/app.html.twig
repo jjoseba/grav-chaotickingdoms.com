@@ -26,21 +26,26 @@
         <div class="row">
            <div class="side-info col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <img src="{{ imgpath.media['icon.png'].url }}" alt="{{ page.header.title }} icon" class="icon img-responsive">
-              <div>
+              <div style="float:left;margin-right:20px;">
                 <ul class="post-meta">
                   {% if page.header.category %}<li><span class="post-meta-key">Categoría:</span> {{ page.header.category }}</li>{% endif %}
                   {% if page.header.platforms %}<li><span class="post-meta-key">Plataformas:</span>{{ page.header.platforms }}</li>{% endif %}
                   {% if page.header.published %}<li><span class="post-meta-key">Publicado:</span> {{ page.header.published }}</li>{% endif %}
                   {% if page.header.technology %}<li><span class="post-meta-key">Tecnología:</span> {{ page.header.technology }}</li>{% endif %}
-                  {% if page.header.colabo %}
+                </ul>
+              </div>
+
+              {% if page.header.colabo %}
+              <div style="float:left;">
+                <ul class="post-meta">
                     <li><span class="post-meta-key">Colaboración con:</span> 
                     {{ page.header.colabo }}
                       
-                        <img src="{{ imgpath.media['colabo.png'].url }}" class="responsive-img no-margin" alt="{{page.header.colabo}}" />
-                      
-                  {% endif %}
-                </ul>
+                        <img src="{{ imgpath.media['colabo.png'].url }}" class="responsive-img no-margin no-float" alt="{{page.header.colabo}}" />
+                    </li>
+                 </ul>  
               </div>
+                  {% endif %}
            </div>
            <div class="description col-xs-12 col-sm-9 col-md-9 col-lg-9">
               <h2 class="hidden-xs">{{ page.header.title }}</h2>

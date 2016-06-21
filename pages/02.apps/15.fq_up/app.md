@@ -29,7 +29,7 @@ App para móvil y tablet para la *Federación Española de Fibrosis Quística* c
 
 FQ-UP es un desarrollo para la Federación Española de Fibrosis Quística, en colaboración con Inyeccion Comunicación. Una aplicación divertida y práctica diseñada para ayudar a las personas con Fibrosis Quística en tratamientos como el suero salino hipertónico, fisioterapia respiratoria, antibióticos inhalados o ejercicio físico. La adherencia al tratamiento es uno de los retos que nos pone la FQ y ésta es una herramienta en la que podrás apoyarte para mantener o mejorar tu adherencia.
 
-FQ-UP puede ayudarte de una forma sencilla a marcarte objetivos semanales, identificar obstáculos y encontrar soluciones prácticas. Podrás utilizar las gráficas para registrar tu evolución, conseguir logros, visitar tutoriales… Pruébala y cuéntanos como te va.
+FQ-UP puede ayudarte de una forma sencilla a marcarte objetivos semanales, identificar obstáculos y encontrar soluciones prácticas. Podrás utilizar las gráficas para registrar tu evolución, conseguir logros, visitar tutoriales… Pruébala y cuéntanos cómo te va.
 
 Características principales:
 * Configura tu tratamiento, marcándote objetivos semanales a superar

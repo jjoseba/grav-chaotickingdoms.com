@@ -1118,7 +1118,7 @@ blockquote{
   margin:2em auto;
 }
 .responsive-img.no-margin{
-  margin: 5px auto;
+  margin: 8px 0;
 }
 .responsive-img.quarter{
   margin:10px auto;
@@ -1254,4 +1254,7 @@ footer .links a:hover{
   display: block;
   padding-top:10px;
   clear:right;
+}
+.no-float{
+  float:none;
 }
