@@ -17,6 +17,7 @@ You should now have all the skeleton files under
 * [Grav-Error plugin](https://github.com/getgrav/grav-plugin-error)
 * [Grav-Problems plugin](https://github.com/getgrav/grav-plugin-problems)
 * [Grav-ExternalLinks plugin](https://github.com/Sommerregen/grav-plugin-external-links)
+* [Grav-MediaEmbed plugin](https://github.com/sommerregen/grav-plugin-mediaembed)
 
 # Deployment
 
