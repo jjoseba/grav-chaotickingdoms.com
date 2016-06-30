@@ -1258,3 +1258,15 @@ footer .links a:hover{
 .no-float{
   float:none;
 }
+.navbar-icon{
+  padding: 10px !important;
+  font-size: 30px;
+}
+.navbar-icon.twitter{
+  color:#6ee5fb;
+}
+.navbar-icon span{
+  font-size: 21px;
+  color: #fff;
+  font-weight: 200;
+}
