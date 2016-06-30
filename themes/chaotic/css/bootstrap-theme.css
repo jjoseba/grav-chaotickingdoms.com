@@ -1261,12 +1261,22 @@ footer .links a:hover{
 .navbar-icon{
   padding: 10px !important;
   font-size: 30px;
+  text-shadow: 0 3px 3px rgba(0,0,0,0.3);
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
+
 }
 .navbar-icon.twitter{
   color:#6ee5fb;
 }
+.navbar-icon:hover{
+  text-shadow: 0 6px 4px rgba(0,0,0,0.4);
+  color:#a9c4da;
+}
+
 .navbar-icon span{
   font-size: 21px;
   color: #fff;
   font-weight: 200;
+  text-shadow: none;
 }
