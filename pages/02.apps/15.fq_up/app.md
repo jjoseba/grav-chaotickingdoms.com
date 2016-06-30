@@ -39,4 +39,6 @@ Características principales:
 * Recibe notificaciones en el móvil cuando te estés quedando atrás en tu evolución
 * Además, tiendes videos y documentación adicional para ayudarte a realizar correctamente los ejercicios y motivarte a llevar a cabo tu plan de acción
 
+![](https://www.youtube.com/watch?v=EjI_x2dZOCU)
+
 FQ-UP ha sido desarrollada nativamente para iOS y Android mediante *Xamarin*. Además, Chaotic Kingdoms desarrolló también el servidor web en el que se registra de forma anónima todo el seguimiento de los tratamientos así como los datos de una encuesta voluntaria que pueden realizar los usuarios.
