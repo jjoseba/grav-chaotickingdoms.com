@@ -12,9 +12,9 @@ features:
     - header: videojuegos y simuladores 3D multiplataforma
       icon: gamepad
       text: Nuestra pasión: videojuegos 2D y 3D para escritorio, tablets y móviles
-    - header: cursos y plataformas<br/>educativas “gamificadas”
-      icon: graduation-cap
-      text: Desarrollo e impartición de cursos. Consultoría e implantación de "Gamificación"
+    - header: experiencias de realidad virtual y aumentada
+      icon: simplybuilt
+      text: Creación de experiencias completas para Oculus, Samsung VR y Google Cardboard
 ---
 
 <p class="lead">Somos una empresa dedicada al diseño, desarrollo y monetización de aplicaciones móviles y aplicaciones web.</p>
