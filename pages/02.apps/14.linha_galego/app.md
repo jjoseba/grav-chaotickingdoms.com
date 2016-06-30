@@ -4,7 +4,9 @@ title: A Liña do Galego
 onpage_menu: false
 category: "Social"
 platforms: "Android, iOS"
-published: "Junio 2016"
+published: "Mayo 2016"
+technology: "Xamarin, ASP.NET"
+colabo: "imaxin|software"
 finished: true
 bg_color: "#02a4d0"
 text_color: "#fff"

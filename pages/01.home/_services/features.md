@@ -8,7 +8,7 @@ features:
       text: Diseño, desarrollo y monetización de aplicaciones para las principales plataformas
     - header: webs, blogs y servicios<br/>web “en la nube”
       icon: cloud
-      text: Desde APIs REST y aplicaciones web complejas a landing pages, blogs y CMS
+      text: Desde landing pages, blogs y CMS a APIs REST y aplicaciones web complejas
     - header: videojuegos y simuladores 3D multiplataforma
       icon: gamepad
       text: Nuestra pasión: videojuegos 2D y 3D para escritorio, tablets y móviles
