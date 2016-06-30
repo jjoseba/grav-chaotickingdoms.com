@@ -1,8 +1,16 @@
+
+
 {% extends 'partials/base.html.twig' %}
 {% do assets.add('theme://js/lightbox.min.js') %}
+{% set imgpath = pages.find(page.route ~ '/img') %}
+
+{%block socialtags %}
+<meta property="og:image" content="{{ uri.base }}{{ imgpath.media['header.jpg'].url(true) }}"/>
+<meta name="twitter:image" content="{{ uri.base }}{{ imgpath.media['header.jpg'].url(true) }}">
+{% endblock %}
 
 {% block content %}
-{% set imgpath = pages.find(page.route ~ '/img') %}
+
 <div class="img-bar" style="background-image: url({{ imgpath.media['header.jpg'].colorize(10,10,10).contrast(10).smooth(10).smooth(10).smooth(10).smooth(10).smooth(10).url }});"> 
   	{% if page.taxonomy.tag %}
   	<div class="container">

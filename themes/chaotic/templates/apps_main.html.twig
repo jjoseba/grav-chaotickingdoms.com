@@ -1,5 +1,10 @@
 {% extends 'partials/base.html.twig' %}
 
+{%block socialtags %}
+<meta property="og:image" content="{{ uri.base }}{{ base_url  }}/user/pages/imgs/portfolio-header.jpg"/>
+<meta name="twitter:image" content="{{ uri.base }}{{ base_url  }}/user/pages/imgs/portfolio-header.jpg"/>
+{% endblock %}
+
 {% block content %}
 <section id="works">
 	<div class="container">

@@ -31,6 +31,17 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#597a95">
 
+    {# Social mediatags #}
+    <meta property="og:title" content="{{ header.title }}"/>
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="og:description" content="{{page.summary|escape}}"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ChaoticKingdoms">
+    <meta name="twitter:creator" content="@ChaoticKingdoms">
+    <meta name="twitter:title" content="{{ page.header.title }}">
+    <meta name="twitter:description" content="{{page.summary|escape}}">
+    {% block socialtags %}{% endblock %}
+
     <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
 
     {% block stylesheets %}
