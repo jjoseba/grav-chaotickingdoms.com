@@ -1146,17 +1146,26 @@ img.grayscale-hover:hover{
     margin: 10px 55px;
     vertical-align: top;
   }
+  .app-info .responsive-img.quarter{
+    margin: 10px 52px;
+  }
 }
 @media (min-width: 992px){
   .responsive-img.quarter{
     width: 21%;
     margin: 10px 15px;
   }
+  .app-info .responsive-img.quarter{
+    margin: 10px 11px;
+  }
 }
 @media (min-width: 1200px){
   .responsive-img.quarter{
     width: 20%;
     margin: 10px 25px;
+  }
+  .app-info .responsive-img.quarter{
+    margin: 10px 18px;
   }
 }
 
