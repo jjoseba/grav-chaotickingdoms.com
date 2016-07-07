@@ -19,11 +19,9 @@ additional: ![Comfortable](img/comfort.png?classes=responsive-img,no-margin "Com
 
 ---
 
-App para móvil y tablet para la *Federación Española de Fibrosis Quística* con el objetivo de mejorar el grado de adherencia al tratamiento en personas con esta enfermedad.
+Experiencia de realidad virtual educativa. "Toma el control de una célula probiotica y navega por el cuerpo humano, eliminando los agentes malignos que salgan a tu paso". Disfruta de la experiencia en Oculus, Samsung VR y Google Cardboard!
 
 ===
-
-Experiencia de realidad virtual educativa. "Toma el control de una célula probiotica y navega por el cuerpo humano, eliminando los agentes malignos que salgan a tu paso". Disfruta de la experiencia en Oculus, Samsung VR y Google Cardboard!
 
 En esta experiencia educativa recorreremos el sistema digestivo, en una representación no realista del mismo, montados en una minimalista nave que dispara proyectiles probióticos para acabar con los enemigos que vendrán a nuestro encuentro. Tendremos una compañera que a modo de guía nos irá explicando qué son cada una de las cosas que veamos y qué función cumplen en la digestión. En un principio veremos el funcionamiento de las vellosidades intestinales y de la globulina, pero pronto veremos que algo malo pasa... y tendremos que entrar en acción!
 
