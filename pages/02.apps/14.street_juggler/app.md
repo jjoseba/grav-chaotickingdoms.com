@@ -20,22 +20,16 @@ Juego interactivo hecho bajo demanda en Unity3D para dispositivos Android.
 
 Diviértete haciendo malabares frente a los coches con pelotas, mazas y fuego! En Street Juggler tomarás el control de una compañia de malabaristas callejeros capaces de hacer decenas de trucos distintos para entretener a los conductores frente a un semáforo. Ayuda a Pedro, María y Óscar a hacer todos sus trucos para obtener monedas, ¡y consigue vestirlos con las ropas y complementos más divertidos! 
 
-#####HAZ DECENAS DE TRUCOS DISTINTOS
-* Malabares con hasta 5 pelotas a la vez mientras haces piruetas
-* Lanza mazas y motosierras al aire y haz un baile antes de que caigan
-* Dispara fuego de colores por doquier, ¡pero ten cuidado de los coches!
+> * #####**Haz decenas de trucos distintos con cada uno de los malabaristas!**
+ * #####**Diviértete con minijuegos y consigue monedas virtuales**
+ * #####**Personaliza a los malabaristas con distintas prendas y complementos**
+ * #####**Interactúa con el entorno y los coches**
 
-#####DIVIÉRTETE CON EL FRENETICO MINIJUEGO DE MALABARES
-* Mantén los malabares en al aire sin que se te caigan
-* Toca las bolas doradas para obtener más monedas
-* No toques el fuego de las mazas, ¡o te quemarás!
+Principales características: 
 
-#####ELIGE TUS MALABARES, PRENDAS Y COMPLEMENTOS
-* Consigue distintos tipos de malabares, como planetas o motosierras
-* Pinta a tus personajes con distintos estilos, ¡podrás incluso pintarles de metal!
-* Compra ropas y complementos de lo más divertidos, ¡como el casco de vikingo!
-
-#####INTERACTUA CON TUS COMPAÑEROS Y CON EL ENTORNO
-* Llama a tus compañeros malabaristas para que te ayuden con tus trucos
-* Haz que los coches suenen el claxon, ¡aunque enfadarás a los malabaristas!
-* Dispara fuego a las palomas que vuelan por la calle, ¡y conviértelas en pollo asado! 
+* Integración con varias plataformas publicitarias
+* Dinero virtual y compras in-app en Google Play Services + sistema de rewarded ads
+* Desarrollo de sistema de Inverse Kinematics para simulación de malabares
+* Diseño y creación de todos los contenidos 2D y 3D (más de 40 complementos desbloqueables para los 3 personajes del juego)
+* ASO (App Store Optimization)
+* Multi-idioma (inglés y castellano)
